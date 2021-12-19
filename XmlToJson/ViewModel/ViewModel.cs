@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.IO;
 using System.Windows;
 using XmlToJson.ParserXml;
 
@@ -30,8 +32,19 @@ namespace XmlToJson
         private void ShowCollectionJsonObject()
         {
             JArray collectionJsonObject = xmlParser.GetCollectionJsonObject();
-            MessageBox.Show("Массив Json объектов можно посмотреть, в дебагe в классе ViewModel, в методе ShowCollectionJsonObject","Создание Json объекта - Выполнено");
+            CreateTxtFileJson(ref collectionJsonObject);
+            MessageBox.Show("Массив Json объектов можно посмотреть, в дебагe в классе ViewModel, в методе ShowCollectionJsonObject или в файле json.txt","Создание Json объекта - Выполнено");            
         }
-
+        private void CreateTxtFileJson(ref JArray collectionJsonObject)
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.NullValueHandling = NullValueHandling.Ignore;
+            using (StreamWriter sw = new StreamWriter("json.txt"))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                writer.Formatting = Formatting.Indented;
+                serializer.Serialize(writer, collectionJsonObject);
+            }
+        }
     }
 }
