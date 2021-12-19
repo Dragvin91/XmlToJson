@@ -9,6 +9,7 @@ namespace XmlToJson.ParserXml
     internal class XmlParser : IXmlParser
     {
         private string filePath;
+        private JArray collectionJsonObject;
         public void StartParserXml(string filepath)
         {
             filePath = filepath;
@@ -28,7 +29,7 @@ namespace XmlToJson.ParserXml
             GetVoltageLevels(ref xmlDoc, ref namespaceXml, ref collectionVoltageLevel);
             GetSubstations(ref xmlDoc, ref namespaceXml, ref collectionSubstation);
 
-            JArray collectionJsonObject = GetJsonObjects(collectionSubstation, collectionVoltageLevel, collectionSynchronousMachine);
+            collectionJsonObject = GetJsonObjects(collectionSubstation, collectionVoltageLevel, collectionSynchronousMachine);
         }
         
         private void GetSynchronousMachines(ref XmlDocument xmlDoc, ref string namespaceXml, ref List<SynchronousMachine> collectionSynchronousMachine)
@@ -112,6 +113,11 @@ namespace XmlToJson.ParserXml
                 synchronousMachine.Add(machine.NameGenerator);
             }
             return synchronousMachine;
+        }
+
+        public JArray GetCollectionJsonObject()
+        {
+            return collectionJsonObject;
         }
     }
 

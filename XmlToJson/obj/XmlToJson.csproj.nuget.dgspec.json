@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Александр\\source\\repos\\XmlToJson\\XmlToJson\\XmlToJson.csproj": {}
+    "C:\\Users\\Александр\\Documents\\GitHub\\XmlToJson\\XmlToJson\\XmlToJson.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Александр\\source\\repos\\XmlToJson\\XmlToJson\\XmlToJson.csproj": {
+    "C:\\Users\\Александр\\Documents\\GitHub\\XmlToJson\\XmlToJson\\XmlToJson.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Александр\\source\\repos\\XmlToJson\\XmlToJson\\XmlToJson.csproj",
+        "projectUniqueName": "C:\\Users\\Александр\\Documents\\GitHub\\XmlToJson\\XmlToJson\\XmlToJson.csproj",
         "projectName": "XmlToJson",
-        "projectPath": "C:\\Users\\Александр\\source\\repos\\XmlToJson\\XmlToJson\\XmlToJson.csproj",
+        "projectPath": "C:\\Users\\Александр\\Documents\\GitHub\\XmlToJson\\XmlToJson\\XmlToJson.csproj",
         "packagesPath": "C:\\Users\\Александр\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Александр\\source\\repos\\XmlToJson\\XmlToJson\\obj\\",
+        "outputPath": "C:\\Users\\Александр\\Documents\\GitHub\\XmlToJson\\XmlToJson\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

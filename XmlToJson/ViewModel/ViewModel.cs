@@ -1,4 +1,6 @@
-﻿using XmlToJson.ParserXml;
+﻿using Newtonsoft.Json.Linq;
+using System.Windows;
+using XmlToJson.ParserXml;
 
 namespace XmlToJson
 {
@@ -10,6 +12,7 @@ namespace XmlToJson
 
         private void OpenFileDialog()
         {
+            MessageBox.Show("Выберете файл Example.xml , прилагался к заданию", "Внимание");
             var dialog = new Microsoft.Win32.OpenFileDialog();
             dialog.Filter = "Xml Files|*.xml;";
             dialog.ShowDialog();
@@ -21,6 +24,14 @@ namespace XmlToJson
         {
             xmlParser ??= new XmlParser();
             xmlParser.StartParserXml(filepath);
+            ShowCollectionJsonObject();
         }
+
+        private void ShowCollectionJsonObject()
+        {
+            JArray collectionJsonObject = xmlParser.GetCollectionJsonObject();
+            MessageBox.Show("Массив Json объектов можно посмотреть, в дебагe в классе ViewModel, в методе ShowCollectionJsonObject","Создание Json объекта - Выполнено");
+        }
+
     }
 }
